@@ -7,7 +7,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 import Models.PassengersModel;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 public class DatabasePassengers extends SQLiteOpenHelper {
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+
     public static final String PASSENGERS_TABLE = "PASSENGERS_TABLE";
     public static final String COLUMN_PASSENGER_ID = "COLUMN_PASSENGER_ID";
     public static final String COLUMN_PASSENGER_NAME = "COLUMN_PASSENGER_NAME";
@@ -15,6 +21,7 @@ public class DatabasePassengers extends SQLiteOpenHelper {
     public static final String COLUMN_PASSENGER_PHONE = "COLUMN_PASSENGER_PHONE";
     public static final String COLUMN_PASSENGER_EMAIL = "COLUMN_PASSENGER_EMAIL";
     public static final String COLUMN_PASSENGER_COUNTRY = "COLUMN_PASSENGER_COUNTRY";
+    public static final String COLUMN_PASSENGER_DATE_OF_BORN = "COLUMN_PASSENGER_DATE_OF_BORN";
     public static final String COLUMN_PASSENGER_RESERVATION_ID = "COLUMN_PASSENGER_RESERVATION_ID";
     public static final String COLUMN_PASSENGER_STARTING = "COLUMN_PASSENGER_STARTING";
     public static final String COLUMN_PASSENGER_LANDING = "COLUMN_PASSENGER_LANDING";
@@ -29,7 +36,7 @@ public class DatabasePassengers extends SQLiteOpenHelper {
 
         String createTable = "CREATE TABLE " + PASSENGERS_TABLE + " (" + COLUMN_PASSENGER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 COLUMN_PASSENGER_NAME + " TEXT, " + COLUMN_PASSENGER_SURNAME + " TEXT, " + COLUMN_PASSENGER_PHONE + " INTEGER, " +
-                COLUMN_PASSENGER_EMAIL + " TEXT, " + COLUMN_PASSENGER_COUNTRY + " TEXT, " + COLUMN_PASSENGER_RESERVATION_ID + " TEXT, "  + COLUMN_PASSENGER_STARTING + " TEXT, " + COLUMN_PASSENGER_LANDING + " TEXT, "
+                COLUMN_PASSENGER_EMAIL + " TEXT, " + COLUMN_PASSENGER_COUNTRY + " TEXT, " + COLUMN_PASSENGER_DATE_OF_BORN + " DATE, " + COLUMN_PASSENGER_RESERVATION_ID + " TEXT, "  + COLUMN_PASSENGER_STARTING + " TEXT, " + COLUMN_PASSENGER_LANDING + " TEXT, "
                 + COLUMN_PASSENGER_PRICE + " INTEGER)";
         db.execSQL(createTable);
     }
@@ -49,6 +56,7 @@ public class DatabasePassengers extends SQLiteOpenHelper {
         int phone  = passengersModel.getPhone();
         String email = passengersModel.getEmail();
         String country = passengersModel.getCountry();
+        Calendar dateOfBorn = passengersModel.getDateOfBorn();
         String reservation = passengersModel.getReservation();
         String starting = passengersModel.getStarting();
         String landing = passengersModel.getLanding();
@@ -59,6 +67,7 @@ public class DatabasePassengers extends SQLiteOpenHelper {
         cv.put(COLUMN_PASSENGER_PHONE,phone);
         cv.put(COLUMN_PASSENGER_EMAIL,email);
         cv.put(COLUMN_PASSENGER_COUNTRY,country);
+        cv.put(COLUMN_PASSENGER_DATE_OF_BORN,dateFormat.format(dateOfBorn.getTime()));
         cv.put(COLUMN_PASSENGER_RESERVATION_ID,reservation);
         cv.put(COLUMN_PASSENGER_STARTING,starting);
         cv.put(COLUMN_PASSENGER_LANDING,landing);

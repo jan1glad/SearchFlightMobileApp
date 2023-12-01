@@ -1,5 +1,7 @@
 package Models;
 
+import java.util.Calendar;
+
 public class PassengersModel {
     private  int id;
     private String name;
@@ -7,18 +9,20 @@ public class PassengersModel {
     private int phone;
     private String email;
     private String country;
+    private Calendar dateOfBorn ;
     private String reservation;
     private String starting;
     private String landing;
     private int price;
 
-    public PassengersModel(int id, String name, String surname, int phone, String email, String country, String reservation, String starting, String landing, int price) {
+    public PassengersModel(int id, String name, String surname, int phone, String email, String country, Calendar dateOfBorn, String reservation, String starting, String landing, int price) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.phone = phone;
         this.email = email;
         this.country = country;
+        this.dateOfBorn = dateOfBorn;
         this.reservation = reservation;
         this.starting = starting;
         this.landing = landing;
@@ -37,6 +41,7 @@ public class PassengersModel {
                 ", phone=" + phone +
                 ", email='" + email + '\'' +
                 ", country='" + country + '\'' +
+                ", dateOfBorn='" + dateOfBorn + '\'' +
                 ", reservation='" + reservation + '\'' +
                 ", starting='" + starting + '\'' +
                 ", landing='" + landing + '\'' +
@@ -90,6 +95,13 @@ public class PassengersModel {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+    public Calendar getDateOfBorn() {
+        return dateOfBorn;
+    }
+
+    public void setDateOfBorn(Calendar dateOfBorn) {
+        this.dateOfBorn = dateOfBorn;
     }
 
     public String getReservation() {

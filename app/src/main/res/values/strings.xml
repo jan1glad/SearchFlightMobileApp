@@ -88,7 +88,7 @@
         <item>Estonia</item>
         <item>Russia</item>
         <item>Switzerland</item>
-</string-array>
+    </string-array>
     <string-array name="carCity">
         <item>Rome</item>
         <item>Lisbon</item>

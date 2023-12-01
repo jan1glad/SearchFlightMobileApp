@@ -6,7 +6,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
 public class DriversModel {
-    public static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     private int id;
     private String name;
@@ -23,17 +22,7 @@ public class DriversModel {
     private Calendar end;
     private int price;
 
-    public String getDateOfBornAsString() {
-        return dateFormatter.format(dateOfBorn.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
-    }
 
-    public String getStartDateAsString() {
-        return dateFormatter.format(start.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
-    }
-
-    public String getEndDateAsString() {
-        return dateFormatter.format(end.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
-    }
 
 
     @Override

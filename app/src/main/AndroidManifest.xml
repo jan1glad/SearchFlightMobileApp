@@ -13,6 +13,9 @@
         android:theme="@style/Theme.SearchFlightMobileApp"
         tools:targetApi="31">
         <activity
+            android:name=".EndingBasket"
+            android:exported="false" />
+        <activity
             android:name="Cars.CarsDriverForm"
             android:exported="false" />
         <activity
@@ -44,6 +47,10 @@
         <activity
             android:name=".SearchFlightsMenu"
             android:exported="false" />
+        <activity
+            android:name=".EndingBasket"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

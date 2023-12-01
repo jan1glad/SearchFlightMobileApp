@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import com.example.searchflightmobileapp.EndingBasket;
 import com.example.searchflightmobileapp.MainActivity;
 import com.example.searchflightmobileapp.R;
 import com.example.searchflightmobileapp.Try;
@@ -26,7 +27,7 @@ public class CarsDriverForm extends AppCompatActivity {
     int carYear=0;
     String carGas="";
     String carCity="";
-    int numberOfDrivers=0;
+    int numberOfDrivers=1;
 
     long daysDifference=0;
     int price=0;
@@ -112,7 +113,6 @@ public class CarsDriverForm extends AppCompatActivity {
 
         surnameEditTexts = new EditText[]{findViewById(R.id.edt_SurnameDriver), findViewById(R.id.edt_SurnameDriver2)};
 
-        bornEditTexts = new EditText[]{findViewById(R.id.edt_BornDriver), findViewById(R.id.edt_BornDriver2)};
 
         countryAutoCompleteTextViews = new AutoCompleteTextView[]{findViewById(R.id.ac_CountryDriver),
                 findViewById(R.id.ac_CountryDriver2)};
@@ -121,7 +121,6 @@ public class CarsDriverForm extends AppCompatActivity {
         for (int i = 1; i < nameEditTexts.length; i++) {
             nameEditTexts[i].setVisibility(View.INVISIBLE);
             surnameEditTexts[i].setVisibility(View.INVISIBLE);
-            bornEditTexts[i].setVisibility(View.INVISIBLE);
             countryAutoCompleteTextViews[i].setVisibility(View.INVISIBLE);
         }
     }
@@ -129,7 +128,6 @@ public class CarsDriverForm extends AppCompatActivity {
     public void setBtn_AddDriver(View v) {
         nameEditTexts[1].setVisibility(View.VISIBLE);
         surnameEditTexts[1].setVisibility(View.VISIBLE);
-        bornEditTexts[1].setVisibility(View.VISIBLE);
         countryAutoCompleteTextViews[1].setVisibility(View.VISIBLE);
         numberOfDrivers++;
     }
@@ -235,24 +233,24 @@ public class CarsDriverForm extends AppCompatActivity {
 
         String phoneText = edt_PhoneDriver.getText().toString();
 
+        Log.d("Jaka cena", String.valueOf(price));
+
+
 
         try {
-            /*for (int y = 0; y < numberOfDrivers; y++) {
-                if (y==0){
-                    typeOfDriver="Main Driver";
-                }else {
-                    typeOfDriver="Second Driver";
-                } */
-                // pierwszy pickupDateCalendar trzeba zamienic na dateOfBorn
-                // najpierw trzeba stworzyc aby uzytkownik mogl wybrac swoja date urodzin
-                // jest problem poniewaz pickup i enddate jest wprowadzony w tej klasie jako Calendar
-                // w klasie DriversModel jest jako LocalDate wiec trzeba to naprawic w najlepszy mozliwy sposob
-                DriversModel driversModel = new DriversModel(-1,nameEditTexts[0].getText().toString(), surnameEditTexts[0].getText().toString(),
+            for (int y = 0; y < numberOfDrivers; y++) {
+
+                DriversModel driversModel = new DriversModel(-1,nameEditTexts[y].getText().toString(), surnameEditTexts[y].getText().toString(),
                         Integer.parseInt(phoneText), edt_EmailDriver.getText().toString(),
-                        countryAutoCompleteTextViews[0].getText().toString(), dateOfBorn, typeOfDriver, reservationID, carCity,carModel, pickupDateCalendar,
+                        countryAutoCompleteTextViews[y].getText().toString(), dateOfBorn, typeOfDriver, reservationID, carCity,carModel, pickupDateCalendar,
                     endDateCalendar,price);
+
+                if (numberOfDrivers==2){
+                    typeOfDriver="Second Driver";
+                }
+
                 driversModelList.add(driversModel);
-           // }
+            }
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -260,11 +258,14 @@ public class CarsDriverForm extends AppCompatActivity {
         DatabaseDrivers databaseDrivers = new DatabaseDrivers(CarsDriverForm.this);
 
 
+        // Intent wyjac z petli zeby nie odpalo sie dwa razy tylko raz
+        // bo pozniej przy cofaniu z mainpage trzeba dwa razy kliknac
+
         for (DriversModel driversModel : driversModelList){
             boolean succes = databaseDrivers.addDrivers(driversModel);
             if (succes){
                 Toast.makeText(CarsDriverForm.this,"Success",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, Try.class);
+                Intent intent = new Intent(this, EndingBasket.class);
                 startActivity(intent);
             }else Toast.makeText(CarsDriverForm.this,"Something went wrong",Toast.LENGTH_SHORT).show();
 
