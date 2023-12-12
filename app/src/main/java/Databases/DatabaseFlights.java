@@ -59,7 +59,7 @@ public class DatabaseFlights extends SQLiteOpenHelper {
                 "(12, 'Poland', 'Poznan', 'Portugal', 'Lisbon', 199),\n" +
                 "(13, 'Poland', 'Poznan', 'Italy', 'Rome', 320),\n" +
                 "(14, 'France', 'Paris', 'UK', 'London', 170),\n" +
-                "(15, 'Germany', 'Warsaw', 'Poland', 'Warsaw', 120),\n" +
+                "(15, 'Germany', 'Berlin', 'Poland', 'Warsaw', 120),\n" +
                 "(16, 'UK', 'London', 'Poland', 'Warsaw', 79),\n" +
                 "(17, 'Netherlands', 'Amsterdam', 'Poland', 'Warsaw', 230),\n" +
                 "(18, 'Spain', 'Madrid', 'Poland', 'Warsaw', 500),\n" +
@@ -103,122 +103,32 @@ public class DatabaseFlights extends SQLiteOpenHelper {
                 "(56, 'Portugal', 'Lisbon', 'Czech Republic', 'Praga', 470),\n" +
                 "(57, 'UK ', 'London', 'Turkey', 'Istanbul', 780),\n" +
                 "(58, 'Turkey', 'Istanbul', 'UK ', 'London', 640),\n" +
-                "(59, 'Poland', 'Krakow', 'Germany', 'Munich', 180),\n" +
-                "(60, 'Germany', 'Munich', 'Poland', 'Krakow', 180),\n" +
-                "(61, 'France', 'Nice', 'Spain', 'Barcelona', 220),\n" +
-                "(62, 'Spain', 'Barcelona', 'France', 'Nice', 220),\n" +
-                "(63, 'Italy', 'Milan', 'Greece', 'Athens', 280),\n" +
-                "(64, 'Greece', 'Athens', 'Italy', 'Milan', 280),\n" +
-                "(65, 'Spain', 'Valencia', 'Portugal', 'Lisbon', 200),\n" +
-                "(66, 'Portugal', 'Lisbon', 'Spain', 'Valencia', 200),\n" +
-                "(67, 'Germany', 'Cologne', 'Netherlands', 'Amsterdam', 150),\n" +
-                "(68, 'Netherlands', 'Amsterdam', 'Germany', 'Cologne', 150),\n" +
-                "(69, 'UK', 'Manchester', 'Ireland', 'Dublin', 230),\n" +
-                "(70, 'Ireland', 'Dublin', 'UK', 'Manchester', 230),\n" +
-                "(71, 'Belgium', 'Brussels', 'France', 'Paris', 160),\n" +
-                "(72, 'France', 'Paris', 'Belgium', 'Brussels', 160),\n" +
-                "(73, 'Switzerland', 'Zurich', 'Italy', 'Venice', 250),\n" +
-                "(74, 'Italy', 'Venice', 'Switzerland', 'Zurich', 250),\n" +
-                "(75, 'Portugal', 'Porto', 'Spain', 'Seville', 190),\n" +
-                "(76, 'Spain', 'Seville', 'Portugal', 'Porto', 190),\n" +
-                "(77, 'Germany', 'Frankfurt', 'Austria', 'Vienna', 210),\n" +
-                "(78, 'Austria', 'Vienna', 'Germany', 'Frankfurt', 210),\n" +
-                "(79, 'Czech Republic', 'Prague', 'Slovakia', 'Bratislava', 160),\n" +
-                "(80, 'Slovakia', 'Bratislava', 'Czech Republic', 'Prague', 160),\n" +
-                "(81, 'Hungary', 'Budapest', 'Czech Republic', 'Ostrava', 230),\n" +
-                "(82, 'Czech Republic', 'Ostrava', 'Hungary', 'Budapest', 230),\n" +
-                "(83, 'Greece', 'Heraklion', 'Italy', 'Florence', 320),\n" +
-                "(84, 'Italy', 'Florence', 'Greece', 'Heraklion', 320),\n" +
-                "(85, 'Turkey', 'Thessaloniki', 'Greece', 'Rhodes', 270),\n" +
-                "(86, 'Greece', 'Rhodes', 'Turkey', 'Thessaloniki', 270),\n" +
-                "(87, 'Norway', 'Oslo', 'Sweden', 'Stockholm', 180),\n" +
-                "(88, 'Sweden', 'Stockholm', 'Norway', 'Oslo', 180),\n" +
-                "(89, 'Denmark', 'Copenhagen', 'Norway', 'Bergen', 220),\n" +
-                "(90, 'Norway', 'Bergen', 'Denmark', 'Copenhagen', 220),\n" +
-                "(91, 'Finland', 'Helsinki', 'Estonia', 'Tallinn', 150),\n" +
-                "(92, 'Estonia', 'Tallinn', 'Finland', 'Helsinki', 150),\n" +
-                "(93, 'Russia', 'Moscow', 'Finland', 'Turku', 300),\n" +
-                "(94, 'Finland', 'Turku', 'Russia', 'Moscow', 300),\n" +
-                "(95, 'Poland', 'Lodz', 'Germany', 'Dusseldorf', 190),\n" +
-                "(96, 'Germany', 'Dusseldorf', 'Poland', 'Lodz', 190),\n" +
-                "(97, 'France', 'Lyon', 'Spain', 'Seville', 260),\n" +
-                "(98, 'Spain', 'Seville', 'France', 'Lyon', 260),\n" +
-                "(99, 'Italy', 'Florence', 'Greece', 'Heraklion', 320),\n" +
-                "(100, 'Greece', 'Heraklion', 'Italy', 'Florence', 320),\n"+
-                "(101, 'Poland', 'Krakow', 'Germany', 'Munich', 180),\n" +
-                "(102, 'Germany', 'Munich', 'Poland', 'Krakow', 200),\n" +
-                "(103, 'France', 'Nice', 'Spain', 'Barcelona', 220),\n" +
-                "(104, 'Spain', 'Barcelona', 'France', 'Nice', 240),\n" +
-                "(105, 'Italy', 'Milan', 'Greece', 'Athens', 280),\n" +
-                "(106, 'Greece', 'Athens', 'Italy', 'Milan', 300),\n" +
-                "(107, 'Spain', 'Valencia', 'Portugal', 'Lisbon', 200),\n" +
-                "(108, 'Portugal', 'Lisbon', 'Spain', 'Valencia', 220),\n" +
-                "(109, 'Germany', 'Cologne', 'Netherlands', 'Amsterdam', 150),\n" +
-                "(110, 'Netherlands', 'Amsterdam', 'Germany', 'Cologne', 170),\n" +
-                "(111, 'UK', 'Manchester', 'Ireland', 'Dublin', 230),\n" +
-                "(112, 'Ireland', 'Dublin', 'UK', 'Manchester', 250),\n" +
-                "(113, 'Belgium', 'Brussels', 'France', 'Paris', 160),\n" +
-                "(114, 'France', 'Paris', 'Belgium', 'Brussels', 180),\n" +
-                "(115, 'Switzerland', 'Zurich', 'Italy', 'Venice', 250),\n" +
-                "(116, 'Italy', 'Venice', 'Switzerland', 'Zurich', 270),\n" +
-                "(117, 'Portugal', 'Porto', 'Spain', 'Seville', 190),\n" +
-                "(118, 'Spain', 'Seville', 'Portugal', 'Porto', 210),\n" +
-                "(119, 'Germany', 'Frankfurt', 'Austria', 'Vienna', 210),\n" +
-                "(120, 'Austria', 'Vienna', 'Germany', 'Frankfurt', 230),\n" +
-                "(121, 'Czech Republic', 'Prague', 'Slovakia', 'Bratislava', 160),\n" +
-                "(122, 'Slovakia', 'Bratislava', 'Czech Republic', 'Prague', 180),\n" +
-                "(123, 'Hungary', 'Budapest', 'Czech Republic', 'Ostrava', 230),\n" +
-                "(124, 'Czech Republic', 'Ostrava', 'Hungary', 'Budapest', 250),\n" +
-                "(125, 'Greece', 'Heraklion', 'Italy', 'Florence', 320),\n" +
-                "(126, 'Italy', 'Florence', 'Greece', 'Heraklion', 340),\n" +
-                "(127, 'Turkey', 'Thessaloniki', 'Greece', 'Rhodes', 270),\n" +
-                "(128, 'Greece', 'Rhodes', 'Turkey', 'Thessaloniki', 290),\n" +
-                "(129, 'Norway', 'Oslo', 'Sweden', 'Stockholm', 180),\n" +
-                "(130, 'Sweden', 'Stockholm', 'Norway', 'Oslo', 200),\n" +
-                "(131, 'Denmark', 'Copenhagen', 'Norway', 'Bergen', 220),\n" +
-                "(132, 'Norway', 'Bergen', 'Denmark', 'Copenhagen', 240),\n" +
-                "(133, 'Finland', 'Helsinki', 'Estonia', 'Tallinn', 150),\n" +
-                "(134, 'Estonia', 'Tallinn', 'Finland', 'Helsinki', 170),\n" +
-                "(135, 'Russia', 'Moscow', 'Finland', 'Turku', 300),\n" +
-                "(136, 'Finland', 'Turku', 'Russia', 'Moscow', 320),\n" +
-                "(137, 'Poland', 'Lodz', 'Germany', 'Dusseldorf', 190),\n" +
-                "(138, 'Germany', 'Dusseldorf', 'Poland', 'Lodz', 210),\n" +
-                "(139, 'France', 'Lyon', 'Spain', 'Seville', 260),\n" +
-                "(140, 'Spain', 'Seville', 'France', 'Lyon', 280),\n" +
-                "(141, 'Italy', 'Naples', 'Greece', 'Mykonos', 300),\n" +
-                "(142, 'Greece', 'Mykonos', 'Italy', 'Naples', 320),\n" +
-                "(143, 'Spain', 'Malaga', 'Portugal', 'Faro', 180),\n" +
-                "(144, 'Portugal', 'Faro', 'Spain', 'Malaga', 200),\n" +
-                "(145, 'Germany', 'Stuttgart', 'Switzerland', 'Geneva', 240),\n" +
-                "(146, 'Switzerland', 'Geneva', 'Germany', 'Stuttgart', 260),\n" +
-                "(147, 'UK', 'Edinburgh', 'Ireland', 'Galway', 190),\n" +
-                "(148, 'Ireland', 'Galway', 'UK', 'Edinburgh', 210),\n" +
-                "(149, 'Belgium', 'Antwerp', 'Netherlands', 'Rotterdam', 160),\n" +
-                "(150, 'Netherlands', 'Rotterdam', 'Belgium', 'Antwerp', 180),\n" +
-                "(151, 'Switzerland', 'Lucerne', 'Austria', 'Salzburg', 220),\n" +
-                "(152, 'Austria', 'Salzburg', 'Switzerland', 'Lucerne', 240),\n" +
-                "(153, 'Czech Republic', 'Brno', 'Slovakia', 'Kosice', 190),\n" +
-                "(154, 'Slovakia', 'Kosice', 'Czech Republic', 'Brno', 210),\n" +
-                "(155, 'Hungary', 'Debrecen', 'Czech Republic', 'Liberec', 250),\n" +
-                "(156, 'Czech Republic', 'Liberec', 'Hungary', 'Debrecen', 270),\n" +
-                "(157, 'Greece', 'Corfu', 'Italy', 'Bologna', 280),\n" +
-                "(158, 'Italy', 'Bologna', 'Greece', 'Corfu', 300),\n" +
-                "(159, 'Turkey', 'Antalya', 'Greece', 'Thessaloniki', 230),\n" +
-                "(160, 'Greece', 'Thessaloniki', 'Turkey', 'Antalya', 250),\n" +
-                "(161, 'Norway', 'Trondheim', 'Sweden', 'Gothenburg', 180),\n" +
-                "(162, 'Sweden', 'Gothenburg', 'Norway', 'Trondheim', 200),\n" +
-                "(163, 'Denmark', 'Aarhus', 'Norway', 'Stavanger', 220),\n" +
-                "(164, 'Norway', 'Stavanger', 'Denmark', 'Aarhus', 240),\n" +
-                "(165, 'Finland', 'Oulu', 'Estonia', 'Viljandi', 150),\n" +
-                "(166, 'Estonia', 'Viljandi', 'Finland', 'Oulu', 170),\n" +
-                "(167, 'Russia', 'Saint Petersburg', 'Finland', 'Lappeenranta', 300),\n" +
-                "(168, 'Finland', 'Lappeenranta', 'Russia', 'Saint Petersburg', 320),\n" +
-                "(169, 'Poland', 'Szczecin', 'Germany', 'Hamburg', 190),\n" +
-                "(170, 'Germany', 'Hamburg', 'Poland', 'Szczecin', 210),\n" +
-                "(171, 'France', 'Bordeaux', 'Spain', 'Valencia', 260),\n" +
-                "(172, 'Spain', 'Valencia', 'France', 'Bordeaux', 280),\n" +
-                "(173, 'Italy', 'Pisa', 'Greece', 'Skiathos', 320),\n" +
-                "(174, 'Greece', 'Skiathos', 'Italy', 'Pisa', 340);";
+                "(59, 'France', 'Paris', 'Germany', 'Berlin', 210),\n" +
+                "(60, 'Germany', 'Berlin', 'France', 'Paris', 190),\n" +
+                "(61, 'Spain', 'Madrid', 'France', 'Paris', 380),\n" +
+                "(62, 'France', 'Paris', 'Spain', 'Madrid', 400),\n" +
+                "(63, 'Netherlands', 'Amsterdam', 'Germany', 'Berlin', 110),\n" +
+                "(64, 'Germany', 'Berlin', 'Netherlands', 'Amsterdam', 130),\n" +
+                "(65, 'Italy', 'Rome', 'Spain', 'Madrid', 270),\n" +
+                "(66, 'Spain', 'Madrid', 'Italy', 'Rome', 250),\n" +
+                "(67, 'Portugal', 'Lisbon', 'Spain', 'Barcelona', 180),\n" +
+                "(68, 'Spain', 'Barcelona', 'Portugal', 'Lisbon', 200),\n" +
+                "(69, 'France', 'Paris', 'Germany', 'Munich', 240),\n" +
+                "(70, 'Germany', 'Munich', 'France', 'Paris', 220),\n" +
+                "(71, 'Netherlands', 'Amsterdam', 'Netherlands', 'Rotterdam', 40),\n" +
+                "(72, 'Netherlands', 'Rotterdam', 'Netherlands', 'Amsterdam', 40),\n" +
+                "(73, 'Germany', 'Frankfurt', 'Germany', 'Hamburg', 300),\n" +
+                "(74, 'Germany', 'Hamburg', 'Germany', 'Frankfurt', 300),\n" +
+                "(75, 'Austria', 'Vienna', 'Hungary', 'Budapest', 220),\n" +
+                "(76, 'Hungary', 'Budapest', 'Austria', 'Vienna', 240),\n" +
+                "(77, 'Poland', 'Warsaw', 'Austria', 'Vienna', 290),\n" +
+                "(78, 'Austria', 'Vienna', 'Poland', 'Warsaw', 310),\n" +
+                "(79, 'Czech Republic', 'Praga', 'Hungary', 'Budapest', 160),\n" +
+                "(80, 'Hungary', 'Budapest', 'Czech Republic', 'Praga', 180),\n" +
+                "(81, 'Italy', 'Milan', 'Italy', 'Florence', 90),\n" +
+                "(82, 'Italy', 'Florence', 'Italy', 'Milan', 90),\n" +
+                "(83, 'Spain', 'Barcelona', 'Spain', 'Seville', 300),\n" +
+                "(84, 'Spain', 'Seville', 'Spain', 'Barcelona', 300);";
 
 
 
@@ -265,6 +175,9 @@ public class DatabaseFlights extends SQLiteOpenHelper {
 
         String queryString = "SELECT * FROM " + FLIGHTS_TABLE + " WHERE " + COLUMN_FLIGHT_START_CITY + " = ? AND " + COLUMN_FLIGHT_LANDING_CITY + " = ?";
 
+        if (startCity == null || finishCity == null) {
+            return returnList;
+        }
 
         Cursor cursor = db.rawQuery(queryString, new String[]{startCity, finishCity});
 
@@ -288,6 +201,102 @@ public class DatabaseFlights extends SQLiteOpenHelper {
         return returnList;
     }
 
+    public List<FlightsModel> getYourFlightCountry(String startCountry, String finishCountry){
+        List<FlightsModel> returnList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String queryString = "SELECT * FROM " + FLIGHTS_TABLE + " WHERE " + COLUMN_FLIGHT_START_COUNTRY + " = ? AND " + COLUMN_FLIGHT_LANDING_COUNTRY + " = ?";
+
+
+        if (startCountry == null || finishCountry == null) {
+            return returnList;
+        }
+
+        Cursor cursor = db.rawQuery(queryString, new String[]{startCountry, finishCountry});
+
+        if (cursor.moveToFirst()) {
+            do {
+                int flightID = cursor.getInt(0);
+                String startCity = cursor.getString(2);
+                String finishCity = cursor.getString(4);
+                int price = cursor.getInt(5);
+
+                FlightsModel flightsModel = new FlightsModel(flightID, startCountry, startCity, finishCountry, finishCity, price);
+
+                returnList.add(flightsModel);
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return returnList;
+    }
+
+    public List<FlightsModel> getYourOneWayFlightCity(String startCity){
+        List<FlightsModel> returnList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String queryString = "SELECT * FROM " + FLIGHTS_TABLE + " WHERE " + COLUMN_FLIGHT_START_CITY + " = ? ";
+
+
+
+
+        Cursor cursor = db.rawQuery(queryString, new String[]{startCity});
+
+        if (cursor.moveToFirst()) {
+            do {
+                int flightID = cursor.getInt(0);
+                String startCountry = cursor.getString(1);
+
+                String finishCity = cursor.getString(3);
+                String finishCountry = cursor.getString(4);
+                int price = cursor.getInt(5);
+
+                FlightsModel flightsModel = new FlightsModel(flightID, startCountry, startCity, finishCountry, finishCity, price);
+
+                returnList.add(flightsModel);
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return returnList;
+    }
+
+    public List<FlightsModel> getYourOneWayFlightCountry(String startCountry){
+        List<FlightsModel> returnList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String queryString = "SELECT * FROM " + FLIGHTS_TABLE + " WHERE " + COLUMN_FLIGHT_START_COUNTRY + " = ? ";
+
+
+        Cursor cursor = db.rawQuery(queryString, new String[]{startCountry});
+
+        if (cursor.moveToFirst()) {
+            do {
+                int flightID = cursor.getInt(0);
+                String startCity = cursor.getString(2);
+
+                String finishCity = cursor.getString(3);
+                String finishCountry = cursor.getString(4);
+                int price = cursor.getInt(5);
+
+                FlightsModel flightsModel = new FlightsModel(flightID, startCountry, startCity, finishCountry, finishCity, price);
+
+                returnList.add(flightsModel);
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return returnList;
+    }
    /* private List<FlightsModel> getFlights() {
         SQLiteDatabase db = this.getReadableDatabase();
 

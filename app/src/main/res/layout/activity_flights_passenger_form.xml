@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="Flights.FlightsPassengerForm">
+    tools:context="Flights.FlightsPassengerForm"
+    android:background="#73ABCB">
 
     <Button
         android:id="@+id/btn_bornDatePass1"

@@ -28,6 +28,7 @@ public class ShowReturnFlight extends AppCompatActivity {
 
         ShowFlightsOnListView(databaseFlights);
 
+
         totalPriceTextView = findViewById(R.id.txt_cena);
 
         // Set the base price
@@ -53,13 +54,28 @@ public class ShowReturnFlight extends AppCompatActivity {
     }
     private void ShowFlightsOnListView(DatabaseFlights databaseFlights) {
         Intent i = getIntent();
-        String startCity = i.getStringExtra("Start");
-        String landingCity = i.getStringExtra("Landing");
+        String startCity = i.getStringExtra("StartCity");
+        String landingCity = i.getStringExtra("LandingCity");
+        String startCountry = i.getStringExtra("StartCountry");
+        String finishCountry = i.getStringExtra("LandingCountry");
+        boolean country = i.getBooleanExtra("country",false);
+        boolean oneWay = i.getBooleanExtra("oneWay",false);
         //int price = i.getIntExtra("FirstPrice",0);
-        if (startCity != null && landingCity != null) {
-            flightsArrayAdapter = new ArrayAdapter<>(ShowReturnFlight.this, android.R.layout.simple_list_item_single_choice, databaseFlights.getYourFlightCity(startCity, landingCity));
-            lv_listReturn.setAdapter(flightsArrayAdapter);
+        if (country&&!oneWay) {
+            flightsArrayAdapter = new ArrayAdapter<>(ShowReturnFlight.this, android.R.layout.simple_list_item_1, databaseFlights.getYourFlightCountry(startCountry, finishCountry));
+        } else if (!country && !oneWay) {
+            flightsArrayAdapter = new ArrayAdapter<>(ShowReturnFlight.this, android.R.layout.simple_list_item_1, databaseFlights.getYourFlightCity(startCity, landingCity));
+        }else if (!country && oneWay){
+            flightsArrayAdapter = new ArrayAdapter<>(ShowReturnFlight.this, android.R.layout.simple_list_item_1, databaseFlights.getYourOneWayFlightCity(startCity));
+        } else if (country && oneWay) {
+            flightsArrayAdapter = new ArrayAdapter<>(ShowReturnFlight.this, android.R.layout.simple_list_item_1, databaseFlights.getYourOneWayFlightCountry(startCountry));
+        }
 
+        lv_listReturn.setAdapter(flightsArrayAdapter);
+
+
+//        i.putExtra("Start1",landingCity);
+//        i.putExtra("Landing1",startCity);
         /*    int totalPrice = price;
 
             List<FlightsModel> flightsList = new ArrayList<>();
@@ -76,9 +92,8 @@ public class ShowReturnFlight extends AppCompatActivity {
             System.out.println("Null Null");
         }*/
         }
-        i.putExtra("Start1",landingCity);
-        i.putExtra("Landing1",startCity);
-    }
+
+
 
     public void setBtn_formFlights(View v) {
 

@@ -7,7 +7,8 @@
     android:orientation="vertical"
     android:layout_gravity="center"
     tools:context=".EndingBasket"
-    tools:ignore="MissingDefaultResource">
+    tools:ignore="MissingDefaultResource"
+    android:background="#73ABCB">
 
 
     <TextView

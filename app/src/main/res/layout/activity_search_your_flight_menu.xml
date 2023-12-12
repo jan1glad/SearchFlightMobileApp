@@ -4,10 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="Flights.SearchYourFlightMenu">
+    tools:context="Flights.SearchYourFlightMenu"
+    android:background="#73ABCB">
 
-    <AutoCompleteTextView
-        android:id="@+id/actv_Start"
+
+    <Spinner
+        android:id="@+id/spn_StartCountry"
+        android:visibility="invisible"
         android:layout_width="341dp"
         android:layout_height="48dp"
         android:completionHint="Choose your start"
@@ -19,8 +22,35 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.139" />
 
-    <AutoCompleteTextView
-        android:id="@+id/actv_Finish"
+    <Spinner
+        android:id="@+id/spn_StartCity"
+        android:layout_width="341dp"
+        android:layout_height="48dp"
+        android:completionHint="Choose your start"
+        android:completionThreshold="1"
+        android:hint="Choose your start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.139" />
+
+    <Spinner
+        android:id="@+id/spn_FinishCity"
+        android:layout_width="341dp"
+        android:layout_height="48dp"
+        android:completionHint="Choose your finish"
+        android:completionThreshold="1"
+        android:hint="Choose your finish"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.235" />
+
+    <Spinner
+        android:id="@+id/spn_FinishCountry"
+        android:visibility="invisible"
         android:layout_width="341dp"
         android:layout_height="48dp"
         android:completionHint="Choose your finish"
@@ -33,10 +63,10 @@
         app:layout_constraintVertical_bias="0.235" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/box_OneWay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Search One Way"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.171"
@@ -45,10 +75,10 @@
         app:layout_constraintVertical_bias="0.348" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/box_ByCountry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Search by country"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.831"
@@ -57,7 +87,7 @@
         app:layout_constraintVertical_bias="0.348" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_SearchFlight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="setButton"
