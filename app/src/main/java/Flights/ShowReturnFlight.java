@@ -62,13 +62,13 @@ public class ShowReturnFlight extends AppCompatActivity {
         boolean oneWay = i.getBooleanExtra("oneWay",false);
         //int price = i.getIntExtra("FirstPrice",0);
         if (country&&!oneWay) {
-            flightsArrayAdapter = new ArrayAdapter<>(ShowReturnFlight.this, android.R.layout.simple_list_item_1, databaseFlights.getYourFlightCountry(startCountry, finishCountry));
+            flightsArrayAdapter = new ArrayAdapter<>(ShowReturnFlight.this, android.R.layout.simple_list_item_single_choice, databaseFlights.getYourFlightCountry(startCountry, finishCountry));
         } else if (!country && !oneWay) {
-            flightsArrayAdapter = new ArrayAdapter<>(ShowReturnFlight.this, android.R.layout.simple_list_item_1, databaseFlights.getYourFlightCity(startCity, landingCity));
+            flightsArrayAdapter = new ArrayAdapter<>(ShowReturnFlight.this, android.R.layout.simple_list_item_single_choice, databaseFlights.getYourFlightCity(startCity, landingCity));
         }else if (!country && oneWay){
-            flightsArrayAdapter = new ArrayAdapter<>(ShowReturnFlight.this, android.R.layout.simple_list_item_1, databaseFlights.getYourOneWayFlightCity(startCity));
+            flightsArrayAdapter = new ArrayAdapter<>(ShowReturnFlight.this, android.R.layout.simple_list_item_single_choice, databaseFlights.getYourOneWayFlightCity(startCity));
         } else if (country && oneWay) {
-            flightsArrayAdapter = new ArrayAdapter<>(ShowReturnFlight.this, android.R.layout.simple_list_item_1, databaseFlights.getYourOneWayFlightCountry(startCountry));
+            flightsArrayAdapter = new ArrayAdapter<>(ShowReturnFlight.this, android.R.layout.simple_list_item_single_choice, databaseFlights.getYourOneWayFlightCountry(startCountry));
         }
 
         lv_listReturn.setAdapter(flightsArrayAdapter);

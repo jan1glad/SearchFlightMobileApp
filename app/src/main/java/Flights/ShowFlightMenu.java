@@ -39,6 +39,12 @@ public class ShowFlightMenu extends AppCompatActivity {
 
 
         ShowFlightsOnListView(databaseFlights);
+
+
+        
+
+
+
     }
 
     private void ShowFlightsOnListView(DatabaseFlights databaseFlights) {
@@ -54,16 +60,16 @@ public class ShowFlightMenu extends AppCompatActivity {
         Log.d("coschyba", startCity);
 
         if (country&&!oneWay) {
-            flightsArrayAdapter = new ArrayAdapter<>(ShowFlightMenu.this, android.R.layout.simple_list_item_1, databaseFlights.getYourFlightCountry(startCountry, finishCountry));
+            flightsArrayAdapter = new ArrayAdapter<>(ShowFlightMenu.this, android.R.layout.simple_list_item_single_choice, databaseFlights.getYourFlightCountry(startCountry, finishCountry));
         } else if (!country && !oneWay) {
-            flightsArrayAdapter = new ArrayAdapter<>(ShowFlightMenu.this, android.R.layout.simple_list_item_1, databaseFlights.getYourFlightCity(startCity, landingCity));
+            flightsArrayAdapter = new ArrayAdapter<>(ShowFlightMenu.this, android.R.layout.simple_list_item_single_choice, databaseFlights.getYourFlightCity(startCity, landingCity));
         }else if (!country && oneWay){
-            flightsArrayAdapter = new ArrayAdapter<>(ShowFlightMenu.this, android.R.layout.simple_list_item_1, databaseFlights.getYourOneWayFlightCity(startCity));
+            flightsArrayAdapter = new ArrayAdapter<>(ShowFlightMenu.this, android.R.layout.simple_list_item_single_choice, databaseFlights.getYourOneWayFlightCity(startCity));
         } else if (country && oneWay) {
-            flightsArrayAdapter = new ArrayAdapter<>(ShowFlightMenu.this, android.R.layout.simple_list_item_1, databaseFlights.getYourOneWayFlightCountry(startCountry));
+            flightsArrayAdapter = new ArrayAdapter<>(ShowFlightMenu.this, android.R.layout.simple_list_item_single_choice, databaseFlights.getYourOneWayFlightCountry(startCountry));
         }
 
-
+        lv_list.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         lv_list.setAdapter(flightsArrayAdapter);
 
     }

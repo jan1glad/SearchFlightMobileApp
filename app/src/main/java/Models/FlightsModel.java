@@ -23,12 +23,9 @@ public class FlightsModel {
 
     @Override
     public String toString() {
-        return "flightID=" + flightID +
-                ", startCountry='" + startCountry + '\'' +
-                ", startCity='" + startCity + '\'' +
-                ", landingCountry='" + landingCountry + '\'' +
-                ", landingCity='" + landingCity + '\'' +
-                ", price=" + price;
+        return "From: " + startCity + " , " + startCountry+'\n'
+                 + "To: " + landingCountry + " , " + landingCity + '\n' +
+                "Price: " + price;
 
     }
 
